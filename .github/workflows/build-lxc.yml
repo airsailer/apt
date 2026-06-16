@@ -40,7 +40,7 @@ jobs:
             libfuse3-dev help2man \
             ruby ruby-dev rubygems \
             docbook2x docbook-utils \
-            libssl-dev libsystemd-dev
+            libssl-dev libsystemd-dev systemd-dev
           gem install fpm
 
       # ==========================================
