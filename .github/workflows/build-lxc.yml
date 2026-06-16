@@ -19,7 +19,8 @@ jobs:
             libapparmor-dev libseccomp-dev libcap-dev libpam0g-dev \
             libselinux1-dev libdbus-1-dev python3-jinja2 \
             libfuse3-dev help2man \
-            reprepro ruby ruby-dev rubygems
+            reprepro ruby ruby-dev rubygems \
+            docbook2x docbook-utils
           sudo gem install fpm
 
       # ==========================================
