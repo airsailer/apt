@@ -4,9 +4,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-publish:
-    runs-on: ubuntu-24.04
+  build-packages:
+    # Run a matrix: build once for Ubuntu Noble, once for Debian Trixie
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - os: noble
+            container_image: ubuntu:24.04
+          - os: trixie
+            container_image: debian:trixie
+
+    container:
+      image: ${{ matrix.container_image }}
+
     steps:
+      - name: Install Git (Required for Checkout)
+        run: |
+          apt-get update
+          apt-get install -y git curl wget
+
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
@@ -14,14 +31,15 @@ jobs:
 
       - name: Install Build Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential meson ninja-build pkg-config \
+          apt-get update
+          # fuse3 might prompt for timezone interactively, so we make it non-interactive
+          DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata build-essential meson ninja-build pkg-config \
             libapparmor-dev libseccomp-dev libcap-dev libpam0g-dev \
             libselinux1-dev libdbus-1-dev python3-jinja2 \
             libfuse3-dev help2man \
-            reprepro ruby ruby-dev rubygems \
+            ruby ruby-dev rubygems \
             docbook2x docbook-utils
-          sudo gem install fpm
+          gem install fpm
 
       # ==========================================
       # 1. BUILD AND PACKAGE LXC
@@ -46,9 +64,10 @@ jobs:
 
       - name: Package LXC into .deb
         run: |
+          # Append ~${{ matrix.os }} to the version string
           fpm -s dir -t deb \
             -n lxc \
-            -v "7.0.0-airsailer1" \
+            -v "7.0.0-airsailer1~${{ matrix.os }}" \
             --architecture amd64 \
             --description "LXC 7.0 LTS Custom Build for Airsailer" \
             --maintainer "Airsailer <support@airsailer.io>" \
@@ -81,7 +100,6 @@ jobs:
 
       - name: Tweak LXCFS Systemd Service
         run: |
-          # Find the systemd file in the staging directory and add the custom flags
           SERVICE_FILE=$(find lxcfs-staging -name "lxcfs.service")
           sed -i 's|ExecStart=/usr/bin/lxcfs /var/lib/lxcfs|ExecStart=/usr/bin/lxcfs --enable-loadavg --enable-cfs /var/lib/lxcfs|' "$SERVICE_FILE"
 
@@ -89,7 +107,7 @@ jobs:
         run: |
           fpm -s dir -t deb \
             -n lxcfs \
-            -v "7.0.0-airsailer1" \
+            -v "7.0.0-airsailer1~${{ matrix.os }}" \
             --architecture amd64 \
             --description "LXCFS 7.0 LTS Custom Build for Airsailer" \
             --maintainer "Airsailer <support@airsailer.io>" \
@@ -100,9 +118,29 @@ jobs:
 
           mv lxcfs_*.deb packages/
 
-      # ==========================================
-      # 3. PUBLISH TO APT REPOSITORY
-      # ==========================================
+      # Upload the compiled packages so the publish job can grab them
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-packages-${{ matrix.os }}
+          path: packages/*.deb
+
+  publish-repo:
+    needs: build-packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Reprepro
+        run: sudo apt-get update && sudo apt-get install -y reprepro
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: downloaded-packages
+          merge-multiple: true
+
       - name: Import GPG Key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v6
@@ -116,19 +154,28 @@ jobs:
           cd repo-pages
           mkdir -p conf
 
+          # Add BOTH distributions to the config
           cat <<EOF > conf/distributions
           Origin: Airsailer
           Label: Airsailer Packages
           Codename: noble
           Architectures: amd64
           Components: main
-          Description: Airsailer Official Repository
+          Description: Airsailer Official Repository (Ubuntu 24.04)
+          SignWith: ${{ steps.import_gpg.outputs.keyid }}
+
+          Origin: Airsailer
+          Label: Airsailer Packages
+          Codename: trixie
+          Architectures: amd64
+          Components: main
+          Description: Airsailer Official Repository (Debian 13)
           SignWith: ${{ steps.import_gpg.outputs.keyid }}
           EOF
 
-          # Add both packages to the repository
-          reprepro -b . includedeb noble ../packages/lxc_*.deb
-          reprepro -b . includedeb noble ../packages/lxcfs_*.deb
+          # Because we might have existing DB files that conflict, we force inclusion
+          reprepro -b . includedeb noble ../downloaded-packages/*~noble_amd64.deb
+          reprepro -b . includedeb trixie ../downloaded-packages/*~trixie_amd64.deb
 
           cp ../public.key ./airsailer-archive-keyring.asc
 
@@ -139,9 +186,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Explicitly set the remote URL so 'origin' exists even if we used 'git init'
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git || git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
           git add .
-          git commit -m "Update APT repository with LXC and LXCFS 7.0.0" || echo "No changes to commit"
+          git commit -m "Update APT repository with Noble & Trixie builds" || echo "No changes to commit"
           git push -u origin gh-pages --force
