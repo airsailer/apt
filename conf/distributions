@@ -3,5 +3,13 @@ Label: Airsailer Packages
 Codename: noble
 Architectures: amd64
 Components: main
-Description: Airsailer Official Repository
+Description: Airsailer Official Repository (Ubuntu 24.04)
+SignWith: E3EC7EAEB5BA62CB
+
+Origin: Airsailer
+Label: Airsailer Packages
+Codename: trixie
+Architectures: amd64
+Components: main
+Description: Airsailer Official Repository (Debian 13)
 SignWith: E3EC7EAEB5BA62CB

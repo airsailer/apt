@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Airsailer
+Label: Airsailer Packages
+Codename: trixie
+Date: Tue, 16 Jun 2026 18:52:26 UTC
+Architectures: amd64
+Components: main
+Description: Airsailer Official Repository (Debian 13)
+MD5Sum:
+ 8c64316a9dc7a1a96078ba96bef334a2 1152 main/binary-amd64/Packages
+ b865940551ce20cb5ed5f7515c4bb951 567 main/binary-amd64/Packages.gz
+ b0a5c6b166f8e47905ec459812c10c0f 135 main/binary-amd64/Release
+SHA1:
+ 101fcae8a4617275c97abc0fdbfe7df38bce42c6 1152 main/binary-amd64/Packages
+ 9a1a4c51b2626a3ef44a1c5db3c77c19788417af 567 main/binary-amd64/Packages.gz
+ bf3d7406eb532a18d21ae1f2842efe338b72939d 135 main/binary-amd64/Release
+SHA256:
+ f93df0fcdd11fce3645b357793db2b45f09cc64393941b3af11017708fe1b268 1152 main/binary-amd64/Packages
+ 17bcf9eeade49ad35f7434525a10266d94cf02601801d1971962ed04bdc00300 567 main/binary-amd64/Packages.gz
+ bfe8239f2d9571869c9c5b36269575ba7ee4cba3f36567edb3f575ade3111988 135 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoxm2sACgkQ4+x+rrW6
+YsuhyxAAighntMF+yTkzVMVZ3q/k48nFL7WRy40UXF3G20gpMaiqotmL/5vgU2U7
++FPMxmE7L5TLAlYLvyGI4EvngYTBQ/oj0QyqK4/7H8i9j4cnHwP96RtGgyKK/9X0
+2x/Odr69B9DjjBDCVWIDWSuLK9T8rzfRNxLRC57IXjS2K4YPXx63D7oY02B+e6XM
+VLKgkuMNlQH3b5r8yUSSCvxynmV8baMWsiBsg1qClxn6VIUo1pq+TUabYcpxfNNO
+ln0OkvWQychg//tW5a4N9wcc/wMKvf2uQII5JbRaU9vzN2bpHskH55thwLjMEze2
+c4I54fMsB0NhMoO5WXP8CnKQixKQL+CiXPPUw4c9SCzDKX5mmloUj2/ejYKs/9Sw
+Mo6hvaz5WFFtWBaNv+lCy4CFmaT9j2IQbvkBAahJaOGb8Sjb9lws09udNoPY+2Mv
+fScKiyo7ZVpsFWLCEDmo6c+dyHdLUEDq8EOgS/olXq3J0mR3Dv9XKWcEeZoThNsS
+RbOrUo2vM6MZBpaVEU0VA3KeLMhI+oGx/1YZfBs7dwR4aK0Mh5VHDqYliWcI3jVp
+9p9J5wLZvtufijm9Yo601fnKwUrv7ss9VhVpju33ZsOhRM5n4Q5SwYM9vbqYZLAw
+I4lQKJzcnrecY31YaQaRUu0ZaXn1ZtyH/+5n9VO5HhgNdwjUfvY=
+=wiVQ
+-----END PGP SIGNATURE-----

@@ -1,0 +1,5 @@
+Component: main
+Origin: Airsailer
+Label: Airsailer Packages
+Architecture: amd64
+Description: Airsailer Official Repository (Debian 13)
