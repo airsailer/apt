@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Airsailer
+Label: Airsailer Packages
+Codename: noble
+Date: Tue, 16 Jun 2026 15:47:13 UTC
+Architectures: amd64
+Components: main
+Description: Airsailer Official Repository
+MD5Sum:
+ 7a8175508f3ae79d2dcac4537793c14c 1124 main/binary-amd64/Packages
+ 750b6e6c684c71a730ed34806b49a11d 557 main/binary-amd64/Packages.gz
+ 62dbe0c56dc41cc29ad6fc5120933373 123 main/binary-amd64/Release
+SHA1:
+ a5ede137b10dc7d2500d735453fd65b0a4147a85 1124 main/binary-amd64/Packages
+ e0e6fac849e5405bee37d54d5e99ab3e78b52452 557 main/binary-amd64/Packages.gz
+ 60f256a5874de1483a98464f94f25f86ced7c75c 123 main/binary-amd64/Release
+SHA256:
+ edd183326a128087fed5bad9a34fa3fc42e43f094f8544d1bdab956ed33afe1a 1124 main/binary-amd64/Packages
+ 57c4d3bdcf9124f467c29e62cdf59a25e1382583808b3232394e0c54b88d698b 557 main/binary-amd64/Packages.gz
+ b96084512b13cead597ab7cb3cb7588fd29d8f5d70ae0a51105a8f6780046bd0 123 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoxcAEACgkQ4+x+rrW6
+YsvioxAAwkNMYLAp+rzGL3tAJLuTRokPQfTxulLCDC78c000YVqJ7hpZEn+qoVXl
+Z9k2rc3CiueHT+mAF34P7Hwqw5E2yacU9FrB9+Hl+Sytd9xeeo1XQ2ii8MFyExAv
+T4BaWRq2dhg07e1JF+K5vuN4zYjWKOX93W/s+Qh0VMlQ1WtsN53ayfg3+eHG0HKk
+StUUDbaMDtsIrQ6V4jR/8QR3FmbWFxlg8Yhgg2fTEVCwEWYEEAg2ybT0Kl/tTZHD
+lC9sg/iVXXPKrX9+VcQ9CtxOm3CwfDrGyUhx/eABoJu8qUiqUpc7HY4X5lws0qOp
+FKyLMNvcpV46UmFWM+W+ElGkPA5jD7B/XUlYk/tm4cxYlnzPp9uK0mB+kAA8Q2gw
+ofSyKpXc7GjwS2kwvCm0+6xZ/O/WOatqwMQDB2snYweXKJ3EE4NfCALAX0qUHpLl
+Z69Y5bV/o0SSd6hol3IZL9UnJ6S1gWbm7aSPNxay3W0md438YyjFyMlJxktZrfMi
+OW3DEIg+ZXTPcBGMjX1ybKB1hQrtYF+4FQKJPhHtk0MEnx4sbIL1jZEkQR5q7aSV
+SzXd0yI1z5KYX5PGyIyqGeObXLuj2DKWnAdWFaPauTdD5oWulSQCxf5qnJga2y7C
+u1ztdhGbYz5VyreGYggYLdosU5Jt42UbIWMhLgYkSSRtk+RXKC4=
+=0+qh
+-----END PGP SIGNATURE-----

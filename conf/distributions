@@ -1,0 +1,7 @@
+Origin: Airsailer
+Label: Airsailer Packages
+Codename: noble
+Architectures: amd64
+Components: main
+Description: Airsailer Official Repository
+SignWith: E3EC7EAEB5BA62CB
