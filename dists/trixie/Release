@@ -1,19 +1,19 @@
 Origin: Airsailer
 Label: Airsailer Packages
 Codename: trixie
-Date: Tue, 16 Jun 2026 18:52:26 UTC
+Date: Tue, 16 Jun 2026 19:49:04 UTC
 Architectures: amd64
 Components: main
 Description: Airsailer Official Repository (Debian 13)
 MD5Sum:
- 8c64316a9dc7a1a96078ba96bef334a2 1152 main/binary-amd64/Packages
- b865940551ce20cb5ed5f7515c4bb951 567 main/binary-amd64/Packages.gz
+ 5e6f41e9b17e19268a50b17d652d3cd8 1152 main/binary-amd64/Packages
+ d435ce8c972916636cacbb429e14a2a9 568 main/binary-amd64/Packages.gz
  b0a5c6b166f8e47905ec459812c10c0f 135 main/binary-amd64/Release
 SHA1:
- 101fcae8a4617275c97abc0fdbfe7df38bce42c6 1152 main/binary-amd64/Packages
- 9a1a4c51b2626a3ef44a1c5db3c77c19788417af 567 main/binary-amd64/Packages.gz
+ fb232cc0bce68b7661b7e0c01ae4830018e78ec2 1152 main/binary-amd64/Packages
+ b0b1045599670c88b31e006b8c6e802f042962ee 568 main/binary-amd64/Packages.gz
  bf3d7406eb532a18d21ae1f2842efe338b72939d 135 main/binary-amd64/Release
 SHA256:
- f93df0fcdd11fce3645b357793db2b45f09cc64393941b3af11017708fe1b268 1152 main/binary-amd64/Packages
- 17bcf9eeade49ad35f7434525a10266d94cf02601801d1971962ed04bdc00300 567 main/binary-amd64/Packages.gz
+ c53e27fcc6bbfb5b7febb59110847c631cf008d03b4189b4b6f6d1934df22b8d 1152 main/binary-amd64/Packages
+ 29eedc498ab694a05a4a306c4b0c3303167d0d85dbf7420fabfc25e1a03a5fd9 568 main/binary-amd64/Packages.gz
  bfe8239f2d9571869c9c5b36269575ba7ee4cba3f36567edb3f575ade3111988 135 main/binary-amd64/Release

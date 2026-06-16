@@ -1,23 +1,23 @@
 Package: lxc
-Version: 7.0.0-airsailer1
+Version: 7.0.0-airsailer2~noble
 License: unknown
 Vendor: none
 Architecture: amd64
 Maintainer: Airsailer <support@airsailer.io>
-Installed-Size: 42436
+Installed-Size: 42399
 Depends: libapparmor1, libseccomp2, libcap2, libselinux1, uidmap
 Homepage: http://example.com/no-uri-given
 Priority: optional
 Section: default
-Filename: pool/main/l/lxc/lxc_7.0.0-airsailer1_amd64.deb
-Size: 18601306
-SHA256: c21970bf589b0a9fbdc6a04438424ee0d25a6352253bbe143421df46a6dd20c6
-SHA1: 53346806d1a9e9bb94fd4812a2a950598f1e4e0c
-MD5sum: 9e5f36fb83aec96b15fb6dca363eb2d6
+Filename: pool/main/l/lxc/lxc_7.0.0-airsailer2~noble_amd64.deb
+Size: 18561458
+SHA256: 71b18c9bf2e4cb2be5d55e1fbdeec74bbd6559a67ea73eb736044a4d248d7e35
+SHA1: bbdbe42e0bfff3846c75fd394af6cc2f66d8e234
+MD5sum: 67c6be3e23b2f919082c7a83804fab59
 Description: LXC 7.0 LTS Custom Build for Airsailer
 
 Package: lxcfs
-Version: 7.0.0-airsailer1
+Version: 7.0.0-airsailer2~noble
 License: unknown
 Vendor: none
 Architecture: amd64
@@ -27,10 +27,10 @@ Depends: fuse3
 Homepage: http://example.com/no-uri-given
 Priority: optional
 Section: default
-Filename: pool/main/l/lxcfs/lxcfs_7.0.0-airsailer1_amd64.deb
-Size: 190606
-SHA256: f8fe80a175347b28ca178b73556c4885248c0a9c8b1fdaa5bcf2f27c02419dcc
-SHA1: 2912c5a11892a085cc01bddaa52db1b13cad4afb
-MD5sum: f7f6ba3bee5a5ed791a34f5d5aca1c3a
+Filename: pool/main/l/lxcfs/lxcfs_7.0.0-airsailer2~noble_amd64.deb
+Size: 190616
+SHA256: 8c69e6e7b39a859664f4c90f8b0d8afa0af0768bc83168e50ea52fc15cadaf88
+SHA1: 1dc5d16282baf17c6c9410395fcafabd9e8cad6d
+MD5sum: 9d3c92390646f2ff5ada9207843478a2
 Description: LXCFS 7.0 LTS Custom Build for Airsailer
 

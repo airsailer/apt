@@ -1,19 +1,19 @@
 Origin: Airsailer
 Label: Airsailer Packages
 Codename: noble
-Date: Tue, 16 Jun 2026 15:47:13 UTC
+Date: Tue, 16 Jun 2026 19:49:04 UTC
 Architectures: amd64
 Components: main
-Description: Airsailer Official Repository
+Description: Airsailer Official Repository (Ubuntu 24.04)
 MD5Sum:
- 7a8175508f3ae79d2dcac4537793c14c 1124 main/binary-amd64/Packages
- 750b6e6c684c71a730ed34806b49a11d 557 main/binary-amd64/Packages.gz
+ f51e160258e4e9cec9d827ae66d24249 1148 main/binary-amd64/Packages
+ ce5151715b6edbe527e5a38c1acaf007 567 main/binary-amd64/Packages.gz
  62dbe0c56dc41cc29ad6fc5120933373 123 main/binary-amd64/Release
 SHA1:
- a5ede137b10dc7d2500d735453fd65b0a4147a85 1124 main/binary-amd64/Packages
- e0e6fac849e5405bee37d54d5e99ab3e78b52452 557 main/binary-amd64/Packages.gz
+ fd0f0e1ebfd7fab917924eee8493d8c298c70ff0 1148 main/binary-amd64/Packages
+ 2f38f557387eb8a2860afeb9bd0e50642ece1f2b 567 main/binary-amd64/Packages.gz
  60f256a5874de1483a98464f94f25f86ced7c75c 123 main/binary-amd64/Release
 SHA256:
- edd183326a128087fed5bad9a34fa3fc42e43f094f8544d1bdab956ed33afe1a 1124 main/binary-amd64/Packages
- 57c4d3bdcf9124f467c29e62cdf59a25e1382583808b3232394e0c54b88d698b 557 main/binary-amd64/Packages.gz
+ 39e7ddfe5172526f50cacb8a8dcf6cc6feb1d800643196421749597cc3a12475 1148 main/binary-amd64/Packages
+ 73332f83d82eea478af33d446952ea98c5ef3acb961d74d1cd0ed9b6d8c0731c 567 main/binary-amd64/Packages.gz
  b96084512b13cead597ab7cb3cb7588fd29d8f5d70ae0a51105a8f6780046bd0 123 main/binary-amd64/Release
