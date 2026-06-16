@@ -8,6 +8,7 @@ jobs:
     # Run a matrix: build once for Ubuntu Noble, once for Debian Trixie
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         include:
           - os: noble
@@ -38,7 +39,8 @@ jobs:
             libselinux1-dev libdbus-1-dev python3-jinja2 \
             libfuse3-dev help2man \
             ruby ruby-dev rubygems \
-            docbook2x docbook-utils
+            docbook2x docbook-utils \
+            libssl-dev libsystemd-dev
           gem install fpm
 
       # ==========================================
