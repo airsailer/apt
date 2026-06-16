@@ -1,0 +1,142 @@
+name: Build and Publish LXC & LXCFS 7.0 to APT Repo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential meson ninja-build pkg-config \
+            libapparmor-dev libseccomp-dev libcap-dev libpam0g-dev \
+            libselinux1-dev libdbus-1-dev python3-jinja2 \
+            libfuse3-dev help2man \
+            reprepro ruby ruby-dev rubygems
+          sudo gem install fpm
+
+      # ==========================================
+      # 1. BUILD AND PACKAGE LXC
+      # ==========================================
+      - name: Download and Extract LXC
+        run: |
+          wget https://linuxcontainers.org/downloads/lxc/lxc-7.0.0.tar.gz
+          tar -xzf lxc-7.0.0.tar.gz
+
+      - name: Compile and Stage LXC
+        run: |
+          cd lxc-7.0.0
+          meson setup build \
+            --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            -Dapparmor=true \
+            -Dseccomp=true \
+            -Dcapabilities=true
+          meson compile -C build
+          DESTDIR=$(pwd)/../lxc-staging meson install -C build
+
+      - name: Package LXC into .deb
+        run: |
+          fpm -s dir -t deb \
+            -n lxc \
+            -v "7.0.0-airsailer1" \
+            --architecture amd64 \
+            --description "LXC 7.0 LTS Custom Build for Airsailer" \
+            --maintainer "Airsailer <support@airsailer.io>" \
+            --depends libapparmor1 \
+            --depends libseccomp2 \
+            --depends libcap2 \
+            --depends libselinux1 \
+            --depends uidmap \
+            --after-install scripts/lxc-post-install.sh \
+            --before-remove scripts/lxc-pre-remove.sh \
+            -C lxc-staging .
+
+          mkdir -p packages
+          mv lxc_*.deb packages/
+
+      # ==========================================
+      # 2. BUILD AND PACKAGE LXCFS
+      # ==========================================
+      - name: Download and Extract LXCFS
+        run: |
+          wget https://github.com/lxc/lxcfs/releases/download/v7.0.0/lxcfs-7.0.0.tar.gz
+          tar -xzf lxcfs-7.0.0.tar.gz
+
+      - name: Compile and Stage LXCFS
+        run: |
+          cd lxcfs-7.0.0
+          meson setup -Dinit-script=systemd --prefix=/usr build/
+          meson compile -C build/
+          DESTDIR=$(pwd)/../lxcfs-staging meson install -C build/
+
+      - name: Tweak LXCFS Systemd Service
+        run: |
+          # Find the systemd file in the staging directory and add the custom flags
+          SERVICE_FILE=$(find lxcfs-staging -name "lxcfs.service")
+          sed -i 's|ExecStart=/usr/bin/lxcfs /var/lib/lxcfs|ExecStart=/usr/bin/lxcfs --enable-loadavg --enable-cfs /var/lib/lxcfs|' "$SERVICE_FILE"
+
+      - name: Package LXCFS into .deb
+        run: |
+          fpm -s dir -t deb \
+            -n lxcfs \
+            -v "7.0.0-airsailer1" \
+            --architecture amd64 \
+            --description "LXCFS 7.0 LTS Custom Build for Airsailer" \
+            --maintainer "Airsailer <support@airsailer.io>" \
+            --depends fuse3 \
+            --after-install scripts/lxcfs-post-install.sh \
+            --before-remove scripts/lxcfs-pre-remove.sh \
+            -C lxcfs-staging .
+
+          mv lxcfs_*.deb packages/
+
+      # ==========================================
+      # 3. PUBLISH TO APT REPOSITORY
+      # ==========================================
+      - name: Import GPG Key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Setup APT Repository with reprepro
+        run: |
+          git clone --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git repo-pages || git init repo-pages
+
+          cd repo-pages
+          mkdir -p conf
+
+          cat <<EOF > conf/distributions
+          Origin: Airsailer
+          Label: Airsailer Packages
+          Codename: noble
+          Architectures: amd64
+          Components: main
+          Description: Airsailer Official Repository
+          SignWith: ${{ steps.import_gpg.outputs.keyid }}
+          EOF
+
+          # Add both packages to the repository
+          reprepro -b . includedeb noble ../packages/lxc_*.deb
+          reprepro -b . includedeb noble ../packages/lxcfs_*.deb
+
+          cp ../public.key ./airsailer-archive-keyring.asc
+
+      - name: Push to GitHub Pages Branch
+        run: |
+          cd repo-pages
+          git checkout -B gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update APT repository with LXC and LXCFS 7.0.0" || echo "No changes to commit"
+          git push -u origin gh-pages --force
