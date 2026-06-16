@@ -138,6 +138,10 @@ jobs:
           git checkout -B gh-pages
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Explicitly set the remote URL so 'origin' exists even if we used 'git init'
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git || git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
           git add .
           git commit -m "Update APT repository with LXC and LXCFS 7.0.0" || echo "No changes to commit"
           git push -u origin gh-pages --force
