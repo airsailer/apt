@@ -40,7 +40,8 @@ jobs:
             libfuse3-dev help2man \
             ruby ruby-dev rubygems \
             docbook2x docbook-utils \
-            libssl-dev libsystemd-dev systemd-dev
+            libssl-dev libsystemd-dev systemd-dev \
+            autoconf automake libtool
           gem install fpm
 
       # ==========================================
@@ -120,6 +121,37 @@ jobs:
             -C lxcfs-staging .
 
           mv lxcfs_*.deb packages/
+
+      # ==========================================
+      # 3. BUILD AND PACKAGE LXC-TEMPLATES
+      # ==========================================
+      - name: Download and Extract LXC-Templates
+        run: |
+          wget https://github.com/lxc/lxc-templates/archive/refs/tags/lxc-templates-3.0.4.tar.gz
+          tar -xzf lxc-templates-3.0.4.tar.gz
+
+      - name: Compile and Stage LXC-Templates
+        run: |
+          # GitHub release archives extract to folder: <repo>-<tag>
+          cd lxc-templates-lxc-templates-3.0.4
+          ./autogen.sh
+          ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+          make
+          DESTDIR=$(pwd)/../lxc-templates-staging make install
+
+      - name: Package LXC-Templates into .deb
+        run: |
+          fpm -s dir -t deb \
+            -n lxc-templates \
+            --epoch 1 \
+            -v "3.0.4-airsailer3~${{ matrix.os }}" \
+            --architecture amd64 \
+            --description "LXC Templates 3.0.4 Custom Build for Airsailer" \
+            --maintainer "Airsailer <support@airsailer.io>" \
+            --depends lxc \
+            -C lxc-templates-staging .
+
+          mv lxc-templates_*.deb packages/
 
       # Upload the compiled packages so the publish job can grab them
       - name: Upload Artifacts
