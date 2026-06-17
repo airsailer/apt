@@ -1,5 +1,5 @@
 Package: lxc
-Version: 1:7.0.0-airsailer3~noble
+Version: 1:7.0.0-airsailer4~noble
 License: unknown
 Vendor: none
 Architecture: amd64
@@ -9,15 +9,33 @@ Depends: libapparmor1, libseccomp2, libcap2, libselinux1, uidmap
 Homepage: http://example.com/no-uri-given
 Priority: optional
 Section: default
-Filename: pool/main/l/lxc/lxc_7.0.0-airsailer3~noble_amd64.deb
-Size: 18561356
-SHA256: 1cd10b73f5bd89635630226454a97a71d31023716c18758cc76cc861824ecf3b
-SHA1: 6aa3d044a75c1f90321717658d1eae0ae551f5fe
-MD5sum: a8be553eeba4ef4fc29f97df16e7f313
+Filename: pool/main/l/lxc/lxc_7.0.0-airsailer4~noble_amd64.deb
+Size: 18561722
+SHA256: fcee1730a91015457cf4bcbc397ea3cb8fc75408e8d3911af740c8d4accc5594
+SHA1: b5f39c0ddcec3d6a5ca63dbce1230d44cd7555a6
+MD5sum: e16694b67d6810acbea50315497c45e7
 Description: LXC 7.0 LTS Custom Build for Airsailer
 
+Package: lxc-templates
+Version: 1:3.0.4-airsailer4~noble
+License: unknown
+Vendor: none
+Architecture: amd64
+Maintainer: Airsailer <support@airsailer.io>
+Installed-Size: 446
+Depends: lxc
+Homepage: http://example.com/no-uri-given
+Priority: optional
+Section: default
+Filename: pool/main/l/lxc-templates/lxc-templates_3.0.4-airsailer4~noble_amd64.deb
+Size: 122552
+SHA256: cdd2f1dd9d1f8caed1e3a7cd4ee1e91543b020f3925caefff7df162a8e33d771
+SHA1: 99aaad256a728d95d21eabd8d47decf395c23c4e
+MD5sum: dc31159dfffc0355072f38fdc2d88dac
+Description: LXC Templates 3.0.4 Custom Build for Airsailer
+
 Package: lxcfs
-Version: 7.0.0-airsailer3~noble
+Version: 7.0.0-airsailer4~noble
 License: unknown
 Vendor: none
 Architecture: amd64
@@ -27,10 +45,10 @@ Depends: fuse3
 Homepage: http://example.com/no-uri-given
 Priority: optional
 Section: default
-Filename: pool/main/l/lxcfs/lxcfs_7.0.0-airsailer3~noble_amd64.deb
-Size: 190624
-SHA256: 51dd6f6ce35e0edc8f675200212d396b10826aeb274cd9891cde8626d17d9d11
-SHA1: 9a12f24c5333e9e591ef8e2db3656acc6b6c74c2
-MD5sum: ca7f0720b86006df3d6b4770e9399c96
+Filename: pool/main/l/lxcfs/lxcfs_7.0.0-airsailer4~noble_amd64.deb
+Size: 190606
+SHA256: 3f7691e8b30623291cf210e2739aea1d28121d61f79359e5560df5221ea4ba5f
+SHA1: f8ad10ca07a0060cf7106895ceb7964169e38e19
+MD5sum: 1dab592ca954507381f4c8cd61953b77
 Description: LXCFS 7.0 LTS Custom Build for Airsailer
 

@@ -4,35 +4,35 @@ Hash: SHA512
 Origin: Airsailer
 Label: Airsailer Packages
 Codename: trixie
-Date: Wed, 17 Jun 2026 08:13:15 UTC
+Date: Wed, 17 Jun 2026 17:00:50 UTC
 Architectures: amd64
 Components: main
 Description: Airsailer Official Repository (Debian 13)
 MD5Sum:
- e7abc0d532315e41562097a3bf8a6a73 1154 main/binary-amd64/Packages
- bc606253ae8efd00fb8acbd42a966391 570 main/binary-amd64/Packages.gz
+ 09104802e5c826b695eb491769cfb42d 1737 main/binary-amd64/Packages
+ 99dcff121fa592ed855a4b5be51ddc41 715 main/binary-amd64/Packages.gz
  b0a5c6b166f8e47905ec459812c10c0f 135 main/binary-amd64/Release
 SHA1:
- 28534afda3e7d0254633de8d52fc8abf79f6c1bf 1154 main/binary-amd64/Packages
- 256d0f012a0b5580cb6f8518b8dd89ea2d1bc48d 570 main/binary-amd64/Packages.gz
+ d0fda375b9540a7468e6b8d1d8d811a9de93c473 1737 main/binary-amd64/Packages
+ 277b0d112819035b51f977c3a7d92eac32868a00 715 main/binary-amd64/Packages.gz
  bf3d7406eb532a18d21ae1f2842efe338b72939d 135 main/binary-amd64/Release
 SHA256:
- 91a639247ad95ddb4feb42f2dd5ce2d6dbf3c313103862181bc028360c1f2c8b 1154 main/binary-amd64/Packages
- a486d4672900a372d4320d3f628a7b0b7f295674479c329e86efdbf60041a5a0 570 main/binary-amd64/Packages.gz
+ e85636a84171573f44a0d9d0bed5d0a93b1a8a1b8b2e60bcad042cfef5ba3863 1737 main/binary-amd64/Packages
+ f15abbd9845154661b92c2bdf6ff460060407775f639c60368ab7e22e9d6d12f 715 main/binary-amd64/Packages.gz
  bfe8239f2d9571869c9c5b36269575ba7ee4cba3f36567edb3f575ade3111988 135 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoyVxsACgkQ4+x+rrW6
-Ystyuw/+PZsoyKwq4lAWE6ydTI8TyAI8G+FAOagCCKRTxZClBAckoCSPXO5awykx
-hI5OEUymMzYWBx5/KN2Dmbmhfah+rr3uYAFYjkd3Yra5Hw9EZ4SI/lNKi5RsmzsD
-l0T0Cs77HnC7qnCDqmc2HUW+qLFy5p77K7RE4c2hawvv+9xQuXUKyy7a2+z1uU3C
-RrewR5193gpWtElZjzmwOkCSopEwd6JxJgbsT2PFee+7A1zh/84YJKoeHBs0OSDy
-P+3+Ajwrr+H9Z/f+MnRD6wT3szRU7xOcJ2GoIlFPb/9xKpz6zc1fNvh3mBtZSabg
-Diug7cC6LVhg03gyGIvrKCYomDiuBOuLkgSybAs7S7qvdECEXB1092gzgKltkb7x
-Rgj6Eoe1d+jAt7O6Yh5+cP3xcL5WgLMqQrqxNOkatgecp4zCdhWL9JRDQ0L8oWwa
-KcWSd0t8WawPlJ/ex7lWAIqSx2cLUFW+nAomeZp7TrMl3PYgG/DxPcWeCXwQJAkn
-PqHnhe98DBuhnz3zRGMC5YFbxHqwRbwCqmDtEYUyBgaa0l8qhO+Z1Vs3+Ci1w2Ed
-x+a5ClMlDcduTLFu+ysBm+Bv6HlMc44BtPfrVIYSz+T7P9TbFpERC4yT6q00+42d
-ldabbgqzb9/8xpxU9+TsOU2AkOtXqSogE/nOSZeWchYDOOTk6Y0=
-=6lSA
+iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoy0sIACgkQ4+x+rrW6
+YsuIlA/8CIvSuaQ8KaP1mM1PkiNS/f63wL1Q66U5jYcqtGeVrz8IRoearLUEIxlY
+8LN8MEYMhtACsNRaEyxl7tLPMrJ2ZbunowAi83RUkfKVylOvE79feUclqXTq29Wr
+CWFpdCCKAQP4q/iIaj8aqb8RCfIegEDCmxY/tVRYcNQlihf9Ikc9mDCgiOP2Of/g
+47PU5i9Z5TsOPBE5Xjo8qBdcTrAYn/8yDJXezXVUajJAtfiutw83OotmjJ8ke05K
+rCS7TDGwcBcj/gka1YGhOIhtDqXPQvB3/mf+VIOQgekIXzsU+fg2zdGdo+4+v5da
+zM1+tbKISgxRVWFa1yl8DErfHFrvW5kNxP6LCsDqyGC07Rqn7/u4ViXdqE03MjEB
+eKpTmcUdsMrnjZe2Q3Pf+CRTZpGQ177+Kt29YLDXMFPAfeycmPEniXfIINkimo0T
+rw4CtFs0XY9eEn5PHpujVY7iZxT0dcVqhobCA9uXzlFCeod59U2741JwDsGakpEy
+azKx9K5doxQSnDyZ7onpk4g0Uxnd9jAFD+ZTR6VrzEA37LTaIoElombg1XSPmIms
+6ILOsTJBeyPGL9iy+gEB5Jd6adydkKuoiLIyJNpO3rvVIuIL74aaVgQS2G8XT0Cn
+t+10NZ1QuXU5CIUCyjqG/UGifcXPTFfD4nQYS0kQdMT+2sfhwuQ=
+=DIel
 -----END PGP SIGNATURE-----
