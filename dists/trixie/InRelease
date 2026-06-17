@@ -4,35 +4,35 @@ Hash: SHA512
 Origin: Airsailer
 Label: Airsailer Packages
 Codename: trixie
-Date: Tue, 16 Jun 2026 19:49:04 UTC
+Date: Wed, 17 Jun 2026 08:13:15 UTC
 Architectures: amd64
 Components: main
 Description: Airsailer Official Repository (Debian 13)
 MD5Sum:
- 5e6f41e9b17e19268a50b17d652d3cd8 1152 main/binary-amd64/Packages
- d435ce8c972916636cacbb429e14a2a9 568 main/binary-amd64/Packages.gz
+ e7abc0d532315e41562097a3bf8a6a73 1154 main/binary-amd64/Packages
+ bc606253ae8efd00fb8acbd42a966391 570 main/binary-amd64/Packages.gz
  b0a5c6b166f8e47905ec459812c10c0f 135 main/binary-amd64/Release
 SHA1:
- fb232cc0bce68b7661b7e0c01ae4830018e78ec2 1152 main/binary-amd64/Packages
- b0b1045599670c88b31e006b8c6e802f042962ee 568 main/binary-amd64/Packages.gz
+ 28534afda3e7d0254633de8d52fc8abf79f6c1bf 1154 main/binary-amd64/Packages
+ 256d0f012a0b5580cb6f8518b8dd89ea2d1bc48d 570 main/binary-amd64/Packages.gz
  bf3d7406eb532a18d21ae1f2842efe338b72939d 135 main/binary-amd64/Release
 SHA256:
- c53e27fcc6bbfb5b7febb59110847c631cf008d03b4189b4b6f6d1934df22b8d 1152 main/binary-amd64/Packages
- 29eedc498ab694a05a4a306c4b0c3303167d0d85dbf7420fabfc25e1a03a5fd9 568 main/binary-amd64/Packages.gz
+ 91a639247ad95ddb4feb42f2dd5ce2d6dbf3c313103862181bc028360c1f2c8b 1154 main/binary-amd64/Packages
+ a486d4672900a372d4320d3f628a7b0b7f295674479c329e86efdbf60041a5a0 570 main/binary-amd64/Packages.gz
  bfe8239f2d9571869c9c5b36269575ba7ee4cba3f36567edb3f575ade3111988 135 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoxqLAACgkQ4+x+rrW6
-YssJrhAAiWuHPH6KBdHH354gCN91XAANYwmexnA+qfDkjPV8DX+roh7ddJ9QD8Ui
-kCaxeLf0bfaL8AzXOLmLtN/vuEmVTnvDQM61jTgebwX0NhdeuzNHXLAwd8lOTj4E
-J7c9YRs5dEFAnsPL4WVf4gBCc7LdLs+VyyS1sz1zjhc6LGcRswG+Mz5pao/aiTpD
-IGRibXedZwLSo7l8didCZczy25YVuThmgNZX/yv/A88ksrGiz4vjZGU2EOOQcV2c
-EwX9AwLf6/im+O7ftucfJ1A6ikZ45hCDDe70VgChVt7JqPK8tNsXSEwf5y/04aUH
-6yI9FyWe3sd7FCNqqv/fT82McCfJd5HKMNYp9yaHvmQ3POsGZpVTX3fCBbpr0fMi
-K6jhtC/K+p6G6pGJdd12HEGRNyCbtzPlHI7kG6Rw2vgDsQ85QUEsycesyPA99QS4
-hoSILXkc4JasT+AaFHylJvkcQa2OS78fad8CiYm3h10mA4NpjTvl8bYGCKyEDAlZ
-h2giWSZBwM9oZVEzeENFP9tRYhIx/lx4ILHWBDXQAvcXjbji5ivmKWLj89PmfOYR
-M8GHIDq7so3XVMLTifthNAL9I9n+mlAaGDZ8pYxAKg4SBqrAtM4w23duV2YI1ghN
-Iq5A3wNVcVFZxtprMPzZt7OFvnwfZXgU1lXb1YLTxA8YDDEqy+A=
-=3gP2
+iQIzBAEBCgAdFiEEkPdbfp4c+q+m4CzN4+x+rrW6YssFAmoyVxsACgkQ4+x+rrW6
+Ystyuw/+PZsoyKwq4lAWE6ydTI8TyAI8G+FAOagCCKRTxZClBAckoCSPXO5awykx
+hI5OEUymMzYWBx5/KN2Dmbmhfah+rr3uYAFYjkd3Yra5Hw9EZ4SI/lNKi5RsmzsD
+l0T0Cs77HnC7qnCDqmc2HUW+qLFy5p77K7RE4c2hawvv+9xQuXUKyy7a2+z1uU3C
+RrewR5193gpWtElZjzmwOkCSopEwd6JxJgbsT2PFee+7A1zh/84YJKoeHBs0OSDy
+P+3+Ajwrr+H9Z/f+MnRD6wT3szRU7xOcJ2GoIlFPb/9xKpz6zc1fNvh3mBtZSabg
+Diug7cC6LVhg03gyGIvrKCYomDiuBOuLkgSybAs7S7qvdECEXB1092gzgKltkb7x
+Rgj6Eoe1d+jAt7O6Yh5+cP3xcL5WgLMqQrqxNOkatgecp4zCdhWL9JRDQ0L8oWwa
+KcWSd0t8WawPlJ/ex7lWAIqSx2cLUFW+nAomeZp7TrMl3PYgG/DxPcWeCXwQJAkn
+PqHnhe98DBuhnz3zRGMC5YFbxHqwRbwCqmDtEYUyBgaa0l8qhO+Z1Vs3+Ci1w2Ed
+x+a5ClMlDcduTLFu+ysBm+Bv6HlMc44BtPfrVIYSz+T7P9TbFpERC4yT6q00+42d
+ldabbgqzb9/8xpxU9+TsOU2AkOtXqSogE/nOSZeWchYDOOTk6Y0=
+=6lSA
 -----END PGP SIGNATURE-----
