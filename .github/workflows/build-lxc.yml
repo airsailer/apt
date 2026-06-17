@@ -69,7 +69,8 @@ jobs:
           # Append ~${{ matrix.os }} to the version string
           fpm -s dir -t deb \
             -n lxc \
-            -v "7.0.0-airsailer2~${{ matrix.os }}" \
+            --epoch 1 \
+            -v "7.0.0-airsailer3~${{ matrix.os }}" \
             --architecture amd64 \
             --description "LXC 7.0 LTS Custom Build for Airsailer" \
             --maintainer "Airsailer <support@airsailer.io>" \
@@ -109,7 +110,7 @@ jobs:
         run: |
           fpm -s dir -t deb \
             -n lxcfs \
-            -v "7.0.0-airsailer2~${{ matrix.os }}" \
+            -v "7.0.0-airsailer3~${{ matrix.os }}" \
             --architecture amd64 \
             --description "LXCFS 7.0 LTS Custom Build for Airsailer" \
             --maintainer "Airsailer <support@airsailer.io>" \
